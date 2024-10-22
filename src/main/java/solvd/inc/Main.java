@@ -9,6 +9,7 @@ import solvd.inc.service.impl.*;
 import java.sql.SQLOutput;
 import java.sql.Timestamp;
 import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,7 +22,7 @@ public class Main {
         TripStatusService tripStatus = new TripStatusServiceImpl();
         PaymentMethodService paymentMethod = new PaymentMethodServiceImpl();
 
-        /*List<Driver> driverList = driverService.getAllDrivers();
+        List<Driver> driverList = driverService.getAllDrivers();
         driverList.forEach(System.out::println);
 
         List<Vehicle> vehicleList = vehicleService.getAllVehicles();
@@ -34,7 +35,7 @@ public class Main {
         tripStatusList.forEach(System.out::println);
 
         List<PaymentMethod> paymentMethodList = paymentMethod.getAllPaymentMethods();
-        paymentMethodList.forEach(System.out::println);*/
+        paymentMethodList.forEach(System.out::println);
 
 
 
@@ -72,16 +73,36 @@ public class Main {
 
         tripStatus.createTripStatus(tripStatus1);*/
 
-        System.out.println(tripStatus.getAllTripStatuses());
+        /*System.out.println(tripStatus.getAllTripStatuses());
 
         tripStatus.deleteTripStatusById(8L);
-        System.out.println(tripStatus.getAllTripStatuses());
+        System.out.println(tripStatus.getAllTripStatuses());*/
 
 
+        //System.out.println(vehicleService.getAllVehicles());
+
+        /*Vehicle vehicle = new Vehicle();
+        vehicle.setModel("Toyota Gucci");
+        vehicle.setYear(2020);
+        vehicle.setPlateNumber("Aasdasda1");
+
+        vehicleService.createVehicle(vehicle);
+        System.out.println(vehicleService.getAllVehicles());
 
 
+         */
 
+        /*
+        VehicleMaintenance maintenance1 = new VehicleMaintenance();
+        maintenance1.setDate(Timestamp.valueOf(LocalDateTime.now()));
+        maintenance1.setDescription("Oil Change");
 
+        VehicleMaintenance maintenance2 = new VehicleMaintenance();
+        maintenance2.setDate(Timestamp.valueOf(LocalDateTime.now().plusMonths(1)));
+        maintenance2.setDescription("Tire Rotation");
 
+        vehicleMaintenanceService.createVehicleMaintenance(maintenance1);
+        vehicleMaintenanceService.createVehicleMaintenance(maintenance2);
+        */
     }
 }

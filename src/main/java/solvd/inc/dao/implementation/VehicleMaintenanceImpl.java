@@ -16,7 +16,7 @@ public class VehicleMaintenanceImpl implements VehicleMaintenanceDAO {
 
     @Override
     public void create(VehicleMaintenance entity) {
-        String query = "INSERT INTO vehicle_maintenance (date, description) VALUES (?, ?)";
+        String query = "INSERT INTO vehicle_maintenances (maintenance_date, description) VALUES (?, ?)";
         Connection connection = null;
         try {
             connection = CONNECTION_POOL.acquireConnection().join();
