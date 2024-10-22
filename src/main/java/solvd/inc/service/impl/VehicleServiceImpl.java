@@ -43,11 +43,18 @@ public class VehicleServiceImpl implements VehicleService {
     public void updateVehicle(Vehicle vehicle) {
         validateVehicle(vehicle);
 
-        if (vehicleDAO.existsByPlateNumber(vehicle.getPlateNumber())) {
-            throw new IllegalArgumentException("Vehicle with plate number '" + vehicle.getPlateNumber() + "' already exists");
+        Optional<Vehicle> existingPlateNumber = vehicleDAO.getByPlateNumber(vehicle.getPlateNumber());
+        if (existingPlateNumber.isPresent()) {
+            Vehicle existingVehicle = existingPlateNumber.get();
+
+            if (!existingVehicle.getId().equals(vehicle.getId())) {
+                throw new IllegalArgumentException("Vehicle with the plate number '" + vehicle.getPlateNumber() + "' already exists");
+            }
         }
         vehicleDAO.update(vehicle);
     }
+
+
 
     @Override
     public void deleteVehicleById(Long id) {

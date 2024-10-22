@@ -1,17 +1,10 @@
 package solvd.inc;
 
+import solvd.inc.dao.implementation.PaymentMethodImpl;
 import solvd.inc.dao.implementation.TripStatusImpl;
-import solvd.inc.model.Driver;
-import solvd.inc.model.TripStatus;
-import solvd.inc.model.Vehicle;
-import solvd.inc.model.VehicleMaintenance;
-import solvd.inc.service.DriverService;
-import solvd.inc.service.VehicleMaintenanceService;
-import solvd.inc.service.VehicleService;
-import solvd.inc.service.impl.DriverServiceImpl;
-import solvd.inc.service.impl.TripStatusServiceImpl;
-import solvd.inc.service.impl.VehicleMaintenanceServiceImpl;
-import solvd.inc.service.impl.VehicleServiceImpl;
+import solvd.inc.model.*;
+import solvd.inc.service.*;
+import solvd.inc.service.impl.*;
 
 import java.sql.SQLOutput;
 import java.sql.Timestamp;
@@ -24,28 +17,71 @@ public class Main {
 
         DriverService driverService = new DriverServiceImpl();
         VehicleService vehicleService = new VehicleServiceImpl();
+        VehicleMaintenanceService vehicleMaintenanceService = new VehicleMaintenanceServiceImpl();
+        TripStatusService tripStatus = new TripStatusServiceImpl();
+        PaymentMethodService paymentMethod = new PaymentMethodServiceImpl();
 
-        Optional<Vehicle> optionalVehicle = vehicleService.getVehicleById(3L);
+        /*List<Driver> driverList = driverService.getAllDrivers();
+        driverList.forEach(System.out::println);
 
-        try {
-            Vehicle vehicle = optionalVehicle.orElseThrow(() ->
-                    new RuntimeException("Vehicle not found with ID: 3"));
+        List<Vehicle> vehicleList = vehicleService.getAllVehicles();
+        vehicleList.forEach(System.out::println);
 
-            Driver newDriver = new Driver();
-            newDriver.setLicenseNumber("XYZ123456er");
-            newDriver.setFirstName("John");
-            newDriver.setLastName("Carlson");
-            newDriver.setRating(4.5);
-            newDriver.setVehicle(vehicle);
+        List<VehicleMaintenance> vehicleMaintenanceList = vehicleMaintenanceService.getAllVehicleMaintenances();
+        vehicleMaintenanceList.forEach(System.out::println);
 
-            driverService.createDriver(newDriver);
-            System.out.println("Driver created successfully: " + newDriver);
+        List<TripStatus> tripStatusList = tripStatus.getAllTripStatuses();
+        tripStatusList.forEach(System.out::println);
 
-            Driver retrievedDriver = driverService.getDriverById(newDriver.getId()).orElseThrow();
-            System.out.println("Retrieved Driver: " + retrievedDriver);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        List<PaymentMethod> paymentMethodList = paymentMethod.getAllPaymentMethods();
+        paymentMethodList.forEach(System.out::println);*/
+
+
+
+        /*System.out.println(driverService.getDriverById(1L));
+        System.out.println(vehicleService.getVehicleById(1L));
+        System.out.println(vehicleMaintenanceService.getVehicleMaintenanceById(1L));
+        System.out.println(tripStatus.getTripStatusById(1L));
+        System.out.println(paymentMethod.getPaymentMethodById(1L));*/
+
+        /*System.out.println(paymentMethod.getPaymentMethodById(1L));
+
+        Optional<PaymentMethod> optionalPaymentMethod = paymentMethod.getPaymentMethodById(1L);
+        PaymentMethod paymentMethod1 = optionalPaymentMethod.get();
+        paymentMethod1.setTitle("New title");
+
+        paymentMethod.updatePaymentMethod(paymentMethod1);
+
+        System.out.println(paymentMethod.getPaymentMethodById(1L));*/
+
+
+        /*System.out.println(vehicleService.getVehicleById(1L));
+
+        Optional<Vehicle> optionalVehicle = vehicleService.getVehicleById(1L);
+        Vehicle vehicle = optionalVehicle.get();
+
+        vehicle.setYear(2030);
+        vehicleService.updateVehicle(vehicle);
+        System.out.println(vehicleService.getVehicleById(1L));*/
+
+
+        /*System.out.println(tripStatus.getAllTripStatuses());
+
+        TripStatus tripStatus1 = new TripStatus();
+        tripStatus1.setTitle("Update");
+
+        tripStatus.createTripStatus(tripStatus1);*/
+
+        System.out.println(tripStatus.getAllTripStatuses());
+
+        tripStatus.deleteTripStatusById(8L);
+        System.out.println(tripStatus.getAllTripStatuses());
+
+
+
+
+
+
 
     }
 }

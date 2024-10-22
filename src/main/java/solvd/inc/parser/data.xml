@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taxiCompany>
+        <driver>
+            <id>1</id>
+            <licenseNumber>XA123456</licenseNumber>
+            <firstName>Gleb</firstName>
+            <lastName>Ivanov</lastName>
+            <rating>4.8</rating>
+            <vehicle>
+                <id>1</id>
+                <model>Toyota Prius</model>
+                <year>2020</year>
+                <plateNumber>ABC123</plateNumber>
+                <vehicleMaintenances>
+                    <maintenance>
+                        <id>1</id>
+                        <date>2024-10-01T10:30:00</date>
+                        <description>Oil change and tire rotation</description>
+                    </maintenance>
+                </vehicleMaintenances>
+            </vehicle>
+        </driver>
+        <driver>
+            <id>2</id>
+            <licenseNumber>NS789101</licenseNumber>
+            <firstName>Arthur</firstName>
+            <lastName>Morgan</lastName>
+            <rating>4.6</rating>
+            <vehicle>
+                <id>2</id>
+                <model>Honda Civic</model>
+                <year>2019</year>
+                <plateNumber>XYZ789</plateNumber>
+                <vehicleMaintenances>
+                    <maintenance>
+                        <id>2</id>
+                        <date>2024-09-15T14:00:00</date>
+                        <description>Brake pad replacement</description>
+                    </maintenance>
+                </vehicleMaintenances>
+            </vehicle>
+        </driver>
+        <driver>
+            <id>3</id>
+            <licenseNumber>AG112131</licenseNumber>
+            <firstName>Joel</firstName>
+            <lastName>Miller</lastName>
+            <rating>4.9</rating>
+            <vehicle>
+                <id>3</id>
+                <model>Tesla Model 3</model>
+                <year>2021</year>
+                <plateNumber>TES123</plateNumber>
+                <vehicleMaintenances>
+                    <maintenance>
+                        <id>3</id>
+                        <date>2024-08-20T09:00:00</date>
+                        <description>Battery replacement</description>
+                    </maintenance>
+                </vehicleMaintenances>
+            </vehicle>
+        </driver>
+        <driver>
+            <id>4</id>
+            <licenseNumber>ML415161</licenseNumber>
+            <firstName>John</firstName>
+            <lastName>Marston</lastName>
+            <rating>4.7</rating>
+            <vehicle>
+                <id>4</id>
+                <model>Ford Escape</model>
+                <year>2018</year>
+                <plateNumber>FOR456</plateNumber>
+                <vehicleMaintenances>
+                    <maintenance>
+                        <id>4</id>
+                        <date>2024-07-05T11:00:00</date>
+                        <description>Transmission check</description>
+                    </maintenance>
+                </vehicleMaintenances>
+            </vehicle>
+        </driver>
+        <driver>
+            <id>5</id>
+            <licenseNumber>TK718192</licenseNumber>
+            <firstName>Geralt</firstName>
+            <lastName>Rivia</lastName>
+            <rating>4.5</rating>
+            <vehicle>
+                <id>5</id>
+                <model>Chevrolet Malibu</model>
+                <year>2022</year>
+                <plateNumber>CHE789</plateNumber>
+                <vehicleMaintenances>
+                    <maintenance>
+                        <id>5</id>
+                        <date>2024-06-25T15:30:00</date>
+                        <description>Air conditioning repair</description>
+                    </maintenance>
+                </vehicleMaintenances>
+            </vehicle>
+        </driver>
+    <tripStatus>
+        <id>1</id>
+        <title>Requested</title>
+    </tripStatus>
+    <tripStatus>
+        <id>2</id>
+        <title>Accepted</title>
+    </tripStatus>
+    <tripStatus>
+        <id>3</id>
+        <title>Arrived</title>
+    </tripStatus>
+    <tripStatus>
+        <id>4</id>
+        <title>In progress</title>
+    </tripStatus>
+    <tripStatus>
+        <id>5</id>
+        <title>Completed</title>
+    </tripStatus>
+    <tripStatus>
+        <id>6</id>
+        <title>Cancelled</title>
+    </tripStatus>
+
+    <paymentMethod>
+        <id>1</id>
+        <title>Cash</title>
+        <description>You have paid in cash</description>
+    </paymentMethod>
+    <paymentMethod>
+        <id>2</id>
+        <title>Card</title>
+        <description>You have paid by card</description>
+    </paymentMethod>
+</taxiCompany>

@@ -44,12 +44,24 @@ public class DriverServiceImpl implements DriverService {
     public void updateDriver(Driver driver) {
         validateDriver(driver);
 
-        if (driverDAO.existsByLicenseNumber(driver.getLicenseNumber())) {
-            throw new IllegalArgumentException("Driver with license number '" + driver.getLicenseNumber() + "' already exists");
+        String licenseNumber = driver.getLicenseNumber();
+        if (licenseNumber == null || licenseNumber.trim().isEmpty()) {
+            throw new IllegalArgumentException("Driver license number cannot be null or empty");
+        }
+
+        Optional<Driver> existingDriverOpt = driverDAO.getByLicenseNumber(licenseNumber);
+
+        if (existingDriverOpt.isPresent()) {
+            Driver existingDriver = existingDriverOpt.get();
+            if (!existingDriver.getId().equals(driver.getId())) {
+                throw new IllegalArgumentException("Driver with license number '" + licenseNumber + "' already exists");
+            }
         }
 
         driverDAO.update(driver);
     }
+
+
 
     @Override
     public void deleteDriverById(Long id) {
